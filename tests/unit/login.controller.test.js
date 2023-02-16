@@ -1,5 +1,7 @@
 const LoginController = require("../controllers/login.controller");
 const LoginModel = require("../controllers/model/login.model");
+const httpsMocks = require('node-mocks-http');
+
 
 LoginModel.create = jest.fn();
 
@@ -12,7 +14,11 @@ describe ("LoginController.createLogin", ()=>{
   });
 
   it("should call LoginModel.create", ()=> {
-     LoginController.createLogin();
+     let req,res,next;
+     req = httpsMocks.createRequest();
+     res = httpsMocks.createResponse();
+     next=null;
+     LoginController.createLogin(req,res,next);
      expect(LoginModel.create).toBeCalled();
 
   });

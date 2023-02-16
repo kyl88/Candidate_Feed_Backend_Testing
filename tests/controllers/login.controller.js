@@ -1,7 +1,7 @@
 const LoginModel = require("./model/login.model");
 
 
-exports.createLogin = () => {
+exports.createLogin = (req,res,next) => {
    LoginModel.create();
 
 };
