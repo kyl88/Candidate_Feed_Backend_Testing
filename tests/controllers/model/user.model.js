@@ -12,7 +12,7 @@ const UserSchema = new mongoose.Schema({
      required: true
   },
 
-  SignUpMethod: {
+  signupmethod: {
      type: String,
      required: true
 
