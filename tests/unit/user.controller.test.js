@@ -28,7 +28,7 @@ describe('UserController.createUser',()=> {
    
      res.body = newModel;
      UserController.createUser(req,res,next);
-     // expect(UserModel.create).toBeCalledWith(newModel);
+      expect(UserModel.create).toBeCalledWith(newModel);
    });
 
     it ('user should be 201 status code',()=>{
