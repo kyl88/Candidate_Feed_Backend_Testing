@@ -36,9 +36,18 @@ describe ("LoginController.createLogin", ()=>{
      req.body = newLogin;
      LoginController.createLogin(req,res,next);
      expect(res.statusCode).toBe(201);
-     
+     expect(res._isEndCalled()).toBeTruthy();
+    
 
    });
+
+   it("test if next is null", ()=> {
+   
+    expect(next).toBeNull(); 
+      
+
+  });
+
 
 
 });

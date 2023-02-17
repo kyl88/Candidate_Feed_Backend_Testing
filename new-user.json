@@ -1,5 +1,8 @@
 {
     "email":"kyle@gmail.com",
     "password": "kyle1",
-    "signupmethod": "user login"
+    "signupmethod": "user login",
+    "role":"Independant",
+    "independentgoal":"find-opportunities",
+    "hiringgoals":"build portfolio"
 }

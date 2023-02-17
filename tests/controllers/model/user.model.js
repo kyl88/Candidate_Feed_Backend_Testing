@@ -16,7 +16,25 @@ const UserSchema = new mongoose.Schema({
      type: String,
      required: true
 
-  }
+  },
+
+  role: {
+   type: String,
+   required: true,
+   enum: ["Independant", "Hirer"]
+ },
+ independantgoal: {
+   type: String,
+   enum: ["Build-Portfolio", "Get-Discovred", "Find-Opportunities", "Commission-Free"],
+   required: function () {return this.role === "Independant"}
+   
+   },
+ 
+ hiringgoals: {
+   type: String,
+    enum: ["Hire-Freelancers", "Browse-Talent", "Manage-Freelancers"],
+    required: function () {return this.role === "Hirer"}
+ }
 
 
 
