@@ -23,7 +23,7 @@ const UserSchema = new mongoose.Schema({
    required: true,
    enum: ["Independant", "Hirer"]
  },
- independantgoal: {
+ independentgoal: {
    type: String,
    enum: ["Build-Portfolio", "Get-Discovred", "Find-Opportunities", "Commission-Free"],
    required: function () {return this.role === "Independant"}

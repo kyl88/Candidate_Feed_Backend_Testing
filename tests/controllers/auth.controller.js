@@ -13,7 +13,7 @@ const signup = asyncHandler(async (req, res) => {
     email,
     password,
     role,
-    independantGoal,
+    independentGoal,
     hiringGoals,
     phoneNumber,
     timeline,
