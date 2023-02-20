@@ -30,13 +30,46 @@ const UserSchema = new mongoose.Schema({
    
    },
  
- hiringgoals: {
+ hiringgoals: [{
    type: String,
     enum: ["Hire-Freelancers", "Browse-Talent", "Manage-Freelancers"],
     required: function () {return this.role === "Hirer"}
+  }],
+
+  hiringskills: [{
+    type: String,
+    required: function () {return this.role === "Hirer"}
+
+  }],
+
+  phonenumber: String,
+  timeline: {
+    startState: {
+       type: Number,
+       enum: [0,1,2,3]
+
+    },
+
+    durationState: {
+       type: Number,
+       enum: [0,1,2,3,4,5]
+    }, 
+    
+    budget: {
+      genre: {
+         type:String,
+         enum :["Hourly-Rate", "Fixed-Price"]
+      },
+       
+    price: {
+       type: Number,
+       enum:[0,1,3,4,5,6]
+    },
+
+
+   }
+
  }
-
-
 
 });
 

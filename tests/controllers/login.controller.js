@@ -2,8 +2,8 @@ const LoginModel = require("./model/login.model");
 
 
 exports.createLogin = (req,res,next) => {
-   LoginModel.create(req.body);
-   res.status(201).send();
+   const createdModel = LoginModel.create(req.body);
+   res.status(201).json(createdModel)
 
 };
 

@@ -19,6 +19,14 @@ beforeEach(()=>{
 
 
 describe ("LoginController.createLogin", ()=>{
+  
+  beforeEach(()=>{
+    req.body = newLogin;  
+
+
+  });
+  
+  
   it("should have a login function", () => {
     expect(typeof LoginController.createLogin).toBe("function");
 
@@ -26,14 +34,14 @@ describe ("LoginController.createLogin", ()=>{
 
   it("should call LoginModel.create", ()=> {
      
-     req.body = newLogin; 
+    
      LoginController.createLogin(req,res,next);
      expect(LoginModel.create).toBeCalledWith(newLogin);
 
   });
 
    it("login should have return 201 response code", ()=> {
-     req.body = newLogin;
+    
      LoginController.createLogin(req,res,next);
      expect(res.statusCode).toBe(201);
      expect(res._isEndCalled()).toBeTruthy();
@@ -43,10 +51,22 @@ describe ("LoginController.createLogin", ()=>{
 
    it("test if next is null", ()=> {
    
-    expect(next).toBeNull(); 
+     expect(next).toBeNull(); 
       
 
   });
+
+  //checking mongoDB response
+  // Lecture 16
+
+
+
+  it("should return json body in response", ()=> {
+        //LoginModel.create.mockReturnValue(newLogin);
+        //LoginController.createLogin(res,req,next);
+        //expect(res._getJSONData()).toStrictEqual(newLogin);  
+   
+    });
 
 
 
