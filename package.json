@@ -15,5 +15,8 @@
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^6.9.1",
     "node-mocks-http": "^1.12.1"
+  },
+  "devDependencies": {
+    "supertest": "^6.3.3"
   }
 }
