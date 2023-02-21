@@ -2,7 +2,7 @@ const request = require("supertest");
 const app = require("../../app");
 const newLogin = require("../mock-data/new-login.json");
 
-const endpointUrl = '/login/';
+const endpointUrl = "/login/";
 
 
 describe(endpointUrl, ()=> {
