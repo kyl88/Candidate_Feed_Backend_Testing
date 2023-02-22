@@ -38,11 +38,11 @@ app.delete("/id", (req,res)=>{
 
 
 
-app.listen(7000,() => {
-   console.log("Server is running");
+//app.listen(7000,() => {
+ //  console.log("Server is running");
 
 
-});
+//});
 
 module.exports = app;
 

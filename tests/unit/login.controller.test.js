@@ -62,9 +62,9 @@ describe ("LoginController.createLogin", ()=>{
   // test case is failing
 
   it("should return json body in response", ()=> {
-        //LoginModel.create.mockReturnValue(newLogin);
-        //LoginController.createLogin(res,req,next);
-        //expect(res._getJSONData()).toStrictEqual(newLogin);  
+       // LoginModel.create.mockReturnValue(newLogin);
+       // LoginController.createLogin(res,req,next);
+       // expect(res._getJSONData()).toStrictEqual(newLogin);  
    
     });
 
