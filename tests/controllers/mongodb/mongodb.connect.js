@@ -1,5 +1,6 @@
 const mongoose = require ("mongoose");
 
+// fixed call back error
 async function connect(){
   try {
      await mongoose.connect(
