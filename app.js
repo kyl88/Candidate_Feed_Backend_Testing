@@ -3,6 +3,9 @@
 const express = require('express');
 const loginRoutes = require("./routes/login.routes");
 const app = express();
+const mongoDB = require("./tests/controllers/mongodb/mongodb.connect");
+
+mongoDB.connect();
 
 app.use(express.json());
 
