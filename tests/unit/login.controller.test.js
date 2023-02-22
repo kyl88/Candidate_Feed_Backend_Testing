@@ -13,7 +13,7 @@ beforeEach(()=>{
   
   req = httpsMocks.createRequest();
   res = httpsMocks.createResponse();
-  next=null;
+  next=jest.fn();
 
 });
 
@@ -32,10 +32,10 @@ describe ("LoginController.createLogin", ()=>{
 
   });
 
-  it("should call LoginModel.create",async ()=> {
+  it("should call LoginModel.create", ()=> {
      
     
-     await LoginController.createLogin(req,res,next);
+     LoginController.createLogin(req,res,next);
      expect(LoginModel.create).toBeCalledWith(newLogin);
 
   });
@@ -49,12 +49,12 @@ describe ("LoginController.createLogin", ()=>{
 
    });
 
-   it("test if next is null", ()=> {
+   //it("test if next is null", ()=> {
    
-     expect(next).toBeNull(); 
+    // expect(next).toBeNull(); 
       
 
-  });
+ // });
 
   //checking mongoDB response
   // Lecture 16
@@ -69,12 +69,21 @@ describe ("LoginController.createLogin", ()=>{
     });
 
    // it ('user should be 201 status code',async()=>{
-     // req.body = newModel;
-     // await LoginController.createLogin(req,res,next);
-     // expect(res.statusCode).toBe(201);
-     // expect(res._isEndCalled()).toBeTruthy();
-  //});
+    //  req.body = newModel;
+    //  await LoginController.createLogin(req,res,next);
+   //  expect(res.statusCode).toBe(201);
+    //  expect(res._isEndCalled()).toBeTruthy();
+ // });
 
 
+ // Failed test case 01
+  it("should handle errors",async ()=>{
+     const errorMessage = {message: "Done property missing"};
+     const rejectedPromise = Promise.reject(errorMessage);
+     LoginModel.create.mockReturnValue(rejectedPromise);
+     await LoginController.createLogin(req, res, next);
+     expect(next).toBeCalledWith(errorMessage);
+     
+  });
 
 });
