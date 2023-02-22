@@ -32,17 +32,17 @@ describe ("LoginController.createLogin", ()=>{
 
   });
 
-  it("should call LoginModel.create", ()=> {
+  it("should call LoginModel.create",async ()=> {
      
     
-     LoginController.createLogin(req,res,next);
+     await LoginController.createLogin(req,res,next);
      expect(LoginModel.create).toBeCalledWith(newLogin);
 
   });
 
-   it("login should have return 201 response code", ()=> {
+   it("login should have return 201 response code",async ()=> {
     
-     LoginController.createLogin(req,res,next);
+     await LoginController.createLogin(req,res,next);
      expect(res.statusCode).toBe(201);
      expect(res._isEndCalled()).toBeTruthy();
     
@@ -61,12 +61,19 @@ describe ("LoginController.createLogin", ()=>{
 
   // test case is failing
 
-  it("should return json body in response", ()=> {
-       // LoginModel.create.mockReturnValue(newLogin);
-       // LoginController.createLogin(res,req,next);
-       // expect(res._getJSONData()).toStrictEqual(newLogin);  
+  it("should return json body in response", async ()=> {
+        LoginModel.create.mockReturnValue(newLogin);
+        await LoginController.createLogin(res,req,next);
+        expect(res._getJSONData()).toStrictEqual(newLogin);  
    
     });
+
+   // it ('user should be 201 status code',async()=>{
+     // req.body = newModel;
+     // await LoginController.createLogin(req,res,next);
+     // expect(res.statusCode).toBe(201);
+     // expect(res._isEndCalled()).toBeTruthy();
+  //});
 
 
 
