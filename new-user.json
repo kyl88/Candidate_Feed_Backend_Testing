@@ -4,5 +4,11 @@
     "signupmethod": "user login",
     "role":"Independant",
     "independentgoal":"find-opportunities",
-    "hiringgoals":"build portfolio"
+    "hiringgoals":"build portfolio",
+    "hiringskills":"cv screening",
+    "startstate":2,
+    "durationstate":5,
+    "budget":{
+      "genre":"Hourly-Rate"
+    }
 }

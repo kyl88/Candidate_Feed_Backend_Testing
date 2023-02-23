@@ -7,7 +7,7 @@ const endpointUrl = "/login/";
 
 describe(endpointUrl, ()=> {
 
-// testing HTTP methods in Rest
+// testing HTTP methods in Rest for login
 // Post - create new
 // Get - Get existing
 // Put - Update existing
