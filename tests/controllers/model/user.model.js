@@ -20,25 +20,25 @@ const UserSchema = new mongoose.Schema({
 
   role: {
    type: String,
-   required: true,
-   enum: ["Independant", "Hirer"]
+   required: true
+ 
  },
  independentgoal: {
    type: String,
-   enum: ["Build-Portfolio", "Get-Discovred", "Find-Opportunities", "Commission-Free"],
-   required: function () {return this.role === "Independant"}
+
+   required: true
    
    },
  
  hiringgoals: [{
    type: String,
-    enum: ["Hire-Freelancers", "Browse-Talent", "Manage-Freelancers"],
-    required: function () {return this.role === "Hirer"}
+   
+    required: true
   }],
 
   hiringskills: [{
     type: String,
-    required: function () {return this.role === "Hirer"}
+    required: true
 
   }],
 
@@ -57,8 +57,9 @@ const UserSchema = new mongoose.Schema({
     
     budget: {
       genre: {
-         type:String,
-         enum :["Hourly-Rate", "Fixed-Price"]
+         type:String
+         
+       
       },
        
     price: {
@@ -69,7 +70,7 @@ const UserSchema = new mongoose.Schema({
 
    }
 
- }
+}
 
 });
 
