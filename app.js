@@ -2,6 +2,7 @@
 
 const express = require('express');
 const loginRoutes = require("./routes/login.routes");
+const userRoutes = require("./routes/user.routes");
 const app = express();
 const mongoDB = require("./tests/controllers/mongodb/mongodb.connect");
 
@@ -10,6 +11,7 @@ mongoDB.connect();
 app.use(express.json());
 
 app.use("/login", loginRoutes);
+app.use("/user", userRoutes);
 
 
 app.get("/", (req, res) => {

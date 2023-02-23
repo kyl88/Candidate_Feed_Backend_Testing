@@ -32,5 +32,5 @@ const endpointUrlUser = "/user/";
 
     });
 
-  });  
+});  
 
