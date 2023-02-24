@@ -5,6 +5,8 @@ const httpsMocks = require('node-mocks-http');
 const newModel = require('../../new-user.json');
 
 UserModel.create = jest.fn();
+UserModel.find = jest.fn();
+
 
 let req,res,next;
 beforeEach(()=>{

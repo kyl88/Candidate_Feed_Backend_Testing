@@ -5,7 +5,7 @@ const newLogin = require('../mock-data/new-login.json');
 
 
 LoginModel.create = jest.fn();
-
+LoginModel.find = jest.fn();
 // basic function
 
 let req,res,next;
@@ -22,8 +22,14 @@ describe("LoginController.getLogin",()=>{
   it("It should have a get login function",()=>{
      expect (typeof LoginController.getLogin).toBe("function");
      
-
    });
+
+  it("should call LoginModel.find({})",async()=>{
+    await LoginController.getLogin(res,req,next);
+    expect(LoginModel.find).toBeCalledWith({});
+
+
+  });
 
 });
 
