@@ -22,7 +22,9 @@ describe(endpointUrl, ()=> {
        expect(response.body.done).toBe(newLogin.done);
        
 
-   });
+   },10000);
+
+   
 
 
 

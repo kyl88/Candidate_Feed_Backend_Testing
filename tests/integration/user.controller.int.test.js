@@ -15,7 +15,7 @@ const endpointUrlUser = "/user/";
       const response = await request (app)
         .post (endpointUrlUser)
         .send (newModel);
-       expect (response.statusCode).toBe(201);
+       expect (response.statusCode).toBe(201); // server side error:500
        expect (response.body.email).toBe(newModel.email);
        expect (response.body.password).toBe(newModel.password);
        expect (response.body.signupmethod).toBe(newModel.signupmethod);

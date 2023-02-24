@@ -11,7 +11,7 @@ beforeEach(()=>{
   
   req = httpsMocks.createRequest();
   res = httpsMocks.createResponse();
-  next=null;
+  next=jest.fn();
 
 });
 
@@ -28,12 +28,12 @@ describe('UserController.createUser',()=> {
    
      res.body = newModel;
      UserController.createUser(req,res,next);
-     // expect(UserModel.create).toBeCalledWith(newModel);
+      //expect(UserModel.create).toBeCalledWith(newModel);
    });
 
-    it ('user should be 201 status code',()=>{
+    it ('user should be 201 status code',async()=>{
         req.body = newModel;
-        UserController.createUser(req,res,next);
+       await UserController.createUser(req,res,next);
         expect(res.statusCode).toBe(201);
         expect(res._isEndCalled()).toBeTruthy();
     });
