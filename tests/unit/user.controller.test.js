@@ -16,6 +16,17 @@ beforeEach(()=>{
 
 });
 
+// Update method for User
+
+describe('Usercontroller.updateUser',()=>{
+  it("should have a updateUser function", ()=>{
+   expect (typeof UserController.updateUser).toBe("function");
+    
+ 
+  });
+ 
+ });
+
 // GET method test for User 
 describe('UserController.createUser',()=> {
    it('It should call the User function',()=>{

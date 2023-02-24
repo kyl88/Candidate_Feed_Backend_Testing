@@ -12,8 +12,12 @@ exports.createUser = async  (req,res,next) => {
    }   
 };
 
-// Testing login function (GET Method)
+// Testing User function (GET Method)
 exports.getUser = async(req,res,next)=> {
     UserModel.find({});
    
-   };
+};
+
+exports.updateUser = async(req,res, next) => {
+
+};

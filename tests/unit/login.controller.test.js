@@ -18,10 +18,10 @@ beforeEach(()=>{
 });
 
 
-describe('',()=>{
+describe('LoginController.updateLogin',()=>{
  it("should have a updateLogin function", ()=>{
   expect (typeof LoginController.updateLogin).toBe("function");
-   
+
 
  });
 
