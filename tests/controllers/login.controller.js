@@ -17,3 +17,7 @@ exports.getLogin = async(req,res,next)=> {
  LoginModel.find({});
 
 };
+
+exports.updateLogin = async(req,res, next) => {
+
+};
