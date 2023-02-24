@@ -7,7 +7,6 @@ const newModel = require('../../new-user.json');
 UserModel.create = jest.fn();
 UserModel.find = jest.fn();
 
-
 let req,res,next;
 beforeEach(()=>{
   
@@ -17,14 +16,24 @@ beforeEach(()=>{
 
 });
 
-
+// GET method test for User 
 describe('UserController.createUser',()=> {
    it('It should call the User function',()=>{
 
-     expect(typeof UserController.createUser).toBe('function');
+     expect(typeof UserController.getUser).toBe('function');
 
 
    });
+
+   it("should call UserModel.find({})", async()=>{
+     await UserController.getUser(res,req,next);
+     expect (UserModel.find).toBeCalledWith({});
+
+   });
+
+   
+
+
 
    it("should call UserModel.create", ()=> {
    
