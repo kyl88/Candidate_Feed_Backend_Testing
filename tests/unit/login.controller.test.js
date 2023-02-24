@@ -17,6 +17,16 @@ beforeEach(()=>{
 
 });
 
+// GET method test
+describe("LoginController.getLogin",()=>{
+  it("It should have a get login function",()=>{
+     expect (typeof LoginController.getLogin).toBe("function");
+     
+
+   });
+
+});
+
 
 describe ("LoginController.createLogin", ()=>{
   

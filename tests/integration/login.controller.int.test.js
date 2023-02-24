@@ -1,4 +1,5 @@
 const request = require("supertest");
+const { response } = require("../../app");
 const app = require("../../app");
 const newLogin = require("../mock-data/new-login.json");
 
@@ -24,7 +25,16 @@ describe(endpointUrl, ()=> {
 
    },10000);
 
-   
+   it('return server-side error with 500 misused data for user ',()=>{
+    async () => {
+       const response = await request (app)
+          .post(endpointUrl)
+          .send({email:"meds@gmail.com"});
+         expect(response.statusCode).toBe(500); 
+    }    
+
+
+   });   
 
 
 

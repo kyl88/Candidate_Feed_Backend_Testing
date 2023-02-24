@@ -12,3 +12,8 @@ exports.createLogin = async (req,res,next) => {
    }   
 };
 
+// Testing login function (GET Method)
+exports.getLogin = async(req,res,next)=> {
+
+
+};
