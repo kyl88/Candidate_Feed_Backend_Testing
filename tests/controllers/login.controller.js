@@ -18,6 +18,11 @@ exports.getLogin = async(req,res,next)=> {
 
 };
 
+// test Login model.ById is called
+exports.getLoginById = async(req,res,next)=> {
+
+};
+
 exports.updateLogin = async(req,res, next) => {
 
 };

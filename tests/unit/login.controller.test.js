@@ -34,6 +34,14 @@ describe("LoginController.getLogin",()=>{
      
    });
 
+   describe("LoginController.getLoginById",()=>{
+     it("should have a getLoginById", ()=>{
+       expect(typeof LoginController.getLoginById).toBe("function");
+
+     });
+
+   });
+
   it("should call LoginModel.find({})",async()=>{
     await LoginController.getLogin(res,req,next);
     expect(LoginModel.find).toBeCalledWith({});
