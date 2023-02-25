@@ -24,6 +24,15 @@ describe('Usercontroller.updateUser',()=>{
     
  
   });
+
+   // Get UserById unit test
+  describe("UserController.getUserById",()=>{
+    it("Should have a getUserById",()=>{
+      expect(typeof UserController.getUserById).toBe("function"); 
+
+    });
+
+  });
  
  });
 
