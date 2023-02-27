@@ -32,6 +32,17 @@ describe('Usercontroller.updateUser',()=>{
 
     });
 
+     
+ 
+
+    // Write the 404 unit test 
+
+    it("should handle 404", async() => {
+    
+
+
+    });
+
   });
  
  });
@@ -67,6 +78,22 @@ describe('UserController.createUser',()=> {
        await UserController.createUser(req,res,next);
         expect(res.statusCode).toBe(201);
         expect(res._isEndCalled()).toBeTruthy();
+    });
+
+    // Write the error handling - PUT 
+
+    it("should handle errors", async() => {
+    
+
+
+   });
+
+    // Write the 404 unit test 
+
+    it("should handle 404", async() => {
+    
+
+
     });
    
 

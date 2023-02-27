@@ -26,4 +26,37 @@ exports.getUserById = async(req,res,next)=> {
 
 exports.updateUser = async(req,res, next) => {
 
+try {
+   const updatedUser = await  updateModel.findByIdUpdate(
+      req.params.userId,
+      req.body,
+      {
+         new:true,
+         userFindAndModify: false
+
+      }
+
+
+   );
+
+   // 
+
+   if (updatedUser){
+
+    res.status(200).json(updatedUser);
+
+
+   } else {
+
+     res.status(404).send();
+
+   }
+
+    
+ } catch(err) {
+
+     next(err);
+ }
+
+
 };
