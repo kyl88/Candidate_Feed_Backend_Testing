@@ -25,6 +25,40 @@ exports.getLoginById = async(req,res,next)=> {
 
 exports.updateLogin = async(req,res, next) => {
 
+     try {
+          const updatedLogin = await  this.updateLogin.findByIdUpdate(
+             req.params.userId,
+             req.body,
+             {
+                new:true,
+                userFindAndModify: false
+       
+             }
+       
+       
+          );
+       
+          // error handling for PUT
+       
+          if (updatedLogin){
+       
+           res.status(200).json(updatedLogin);
+       
+       
+          } else {
+       
+            res.status(404).send();
+       
+          }
+       
+           
+        } catch(err) {
+       
+            next(err);
+        }
+       
+       
+
 };
 
 // delete controller - Delete HTTP method

@@ -20,6 +20,7 @@ exports.getUser = async(req,res,next)=> {
 
 // test User model.ById is called
 exports.getUserById = async(req,res,next)=> {
+    UserModel.findById(req.params.userId);
 
 };
 

@@ -6,6 +6,7 @@ const newModel = require('../../new-user.json');
 
 UserModel.create = jest.fn();
 UserModel.find = jest.fn();
+UserModel.findById = jest.fn();
 
 let req,res,next;
 beforeEach(()=>{
@@ -41,6 +42,15 @@ describe('Usercontroller.updateUser',()=>{
   describe("UserController.getUserById",()=>{
     it("Should have a getUserById",()=>{
       expect(typeof UserController.getUserById).toBe("function"); 
+
+    });
+    
+    // testing Usermodel id routes
+    it('should call UserModel.findbyId with routes',async()=>{
+        req.params.UserId="";
+        await UserController.getUserById(req,res,next);
+       // expect (UserModel.findById).toBeCalledWith(""); // no ID token added from Postman
+
 
     });
 
