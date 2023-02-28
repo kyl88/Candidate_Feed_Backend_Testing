@@ -3,6 +3,7 @@ const UserController = require('../controllers/user.controller');
 const UserModel = require('../controllers/model/user.model');
 const httpsMocks = require('node-mocks-http');
 const newModel = require('../../new-user.json');
+const LoginModel = require('../controllers/model/login.model');
 
 UserModel.create = jest.fn();
 UserModel.find = jest.fn();
@@ -51,6 +52,14 @@ describe('Usercontroller.updateUser',()=>{
         await UserController.getUserById(req,res,next);
        // expect (UserModel.findById).toBeCalledWith(""); // no ID token added from Postman hence it gonna fail
       
+
+    });
+
+    // json body and response code 200 for User
+
+    it('return json body and response code 200 for user',async()=>{
+      UserModel.findById.mockReturnValue(newModel);
+      await UserController.getUserById(req,res,next);
 
     });
 
