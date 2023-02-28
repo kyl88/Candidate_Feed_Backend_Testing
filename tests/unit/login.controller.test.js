@@ -147,9 +147,12 @@ describe ("LoginController.createLogin", ()=>{
       LoginModel.findById.mockReturnValue(newLogin);
       await LoginController.getLoginById(req,res,next);
 
+      expect(res.statusCode).toBe(200);
+      expect(res._getJSONData()).toStrictEqual(newLogin);
+      expect(res._isEndCalled()).toBeTruthy();
 
   });
-  
+
 
 
  // Failed test case 01

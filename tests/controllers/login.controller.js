@@ -20,7 +20,8 @@ exports.getLogin = async(req,res,next)=> {
 
 // test Login model.ById is called
 exports.getLoginById = async(req,res,next)=> {
-  LoginModel.findById(req.params.loginId);
+  const loginModels = await LoginModel.findById(req.params.loginModels);
+  res.status(200).json(loginModels);
 
 };
 

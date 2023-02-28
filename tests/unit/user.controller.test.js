@@ -60,6 +60,9 @@ describe('Usercontroller.updateUser',()=>{
     it('return json body and response code 200 for user',async()=>{
       UserModel.findById.mockReturnValue(newModel);
       await UserController.getUserById(req,res,next);
+      expect(res.statusCode).toBe(200);
+      expect(res._getJSONData()).toStrictEqual(newModel);
+      expect (res._isEndCalled()).toBeTruthy();
 
     });
 

@@ -18,9 +18,10 @@ exports.getUser = async(req,res,next)=> {
    
 };
 
-// test User model.ById is called
+// test User model.ById is called and response 200 code test for user model case is passed
 exports.getUserById = async(req,res,next)=> {
-    UserModel.findById(req.params.userId);
+   const userModels = await UserModel.findById(req.params.userModels);
+   res.status(200).json(userModels)
 
 };
 
