@@ -17,6 +17,8 @@ beforeEach(()=>{
 
 });
 
+
+// delete login unit test
 describe("LoginController.deleteLogin",()=>{
   it("should have a deleteLogin function",()=>{
       expect(typeof LoginController.deleteLogin).toBe("function");

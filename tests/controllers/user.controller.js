@@ -60,3 +60,10 @@ try {
 
 
 };
+
+
+// delete controller
+exports.deleteUser = async(req,res,next)=>{
+
+
+};

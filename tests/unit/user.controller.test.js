@@ -16,6 +16,18 @@ beforeEach(()=>{
 
 });
 
+// Delete user unit test
+
+describe('UserController.deleteLogin',()=>{
+   it('Should have a deleteUser function',()=>{
+      expect(typeof UserController.deleteUser).toBe("function");
+
+
+   });
+
+
+});
+
 // Update method for User
 
 describe('Usercontroller.updateUser',()=>{
