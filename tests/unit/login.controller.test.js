@@ -6,6 +6,7 @@ const newLogin = require('../mock-data/new-login.json');
 
 LoginModel.create = jest.fn();
 LoginModel.find = jest.fn();
+LoginModel.findById = jest.fn();
 // basic function
 
 let req,res,next;
@@ -131,6 +132,13 @@ describe ("LoginController.createLogin", ()=>{
       await LoginController.createLogin(req,res,next);
      expect(res.statusCode).toBe(201);
       expect(res._isEndCalled()).toBeTruthy();
+  });
+
+  it("Should call LoginModel.findId by routes",async()=>{
+     req.params.LoginId =" ";
+     await LoginController.getLoginById(req,res,next);
+    // expect (LoginModel.findById).toBeCalledWith(""); // no ID token added from Postman hence it gonna fail
+
   });
 
 

@@ -50,7 +50,7 @@ describe('Usercontroller.updateUser',()=>{
         req.params.UserId="";
         await UserController.getUserById(req,res,next);
        // expect (UserModel.findById).toBeCalledWith(""); // no ID token added from Postman hence it gonna fail
-
+      
 
     });
 

@@ -20,6 +20,7 @@ exports.getLogin = async(req,res,next)=> {
 
 // test Login model.ById is called
 exports.getLoginById = async(req,res,next)=> {
+  LoginModel.findById(req.params.loginId);
 
 };
 
