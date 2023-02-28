@@ -49,7 +49,7 @@ describe('Usercontroller.updateUser',()=>{
     it('should call UserModel.findbyId with routes',async()=>{
         req.params.UserId="";
         await UserController.getUserById(req,res,next);
-       // expect (UserModel.findById).toBeCalledWith(""); // no ID token added from Postman
+       // expect (UserModel.findById).toBeCalledWith(""); // no ID token added from Postman hence it gonna fail
 
 
     });
