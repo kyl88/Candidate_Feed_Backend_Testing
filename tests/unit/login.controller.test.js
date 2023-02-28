@@ -133,11 +133,20 @@ describe ("LoginController.createLogin", ()=>{
      expect(res.statusCode).toBe(201);
       expect(res._isEndCalled()).toBeTruthy();
   });
+  
 
+  // testing LoginModel id routes
   it("Should call LoginModel.findId by routes",async()=>{
      req.params.LoginId =" ";
      await LoginController.getLoginById(req,res,next);
     // expect (LoginModel.findById).toBeCalledWith(""); // no ID token added from Postman hence it gonna fail
+
+  });
+
+  it('Should return json body and response code 200 for Login',async()=>{
+      LoginModel.findById.mockReturnValue(newLogin);
+      await LoginController.getLoginById(req,res,next);
+
 
   });
 
