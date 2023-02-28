@@ -26,3 +26,7 @@ exports.getLoginById = async(req,res,next)=> {
 exports.updateLogin = async(req,res, next) => {
 
 };
+
+exports.deleteLogin = async(req,res,next)=> {
+
+};

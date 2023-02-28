@@ -17,6 +17,15 @@ beforeEach(()=>{
 
 });
 
+describe("LoginController.deleteLogin",()=>{
+  it("should have a deleteLogin function",()=>{
+      expect(typeof LoginController.deleteLogin).toBe("function");
+       
+
+  });
+
+});
+
 
 describe('LoginController.updateLogin',()=>{
  it("should have a updateLogin function", ()=>{
