@@ -8,6 +8,7 @@ const LoginModel = require('../controllers/model/login.model');
 UserModel.create = jest.fn();
 UserModel.find = jest.fn();
 UserModel.findById = jest.fn();
+UserModel.findByIdAndDelete=jest.fn();
 
 let req,res,next;
 beforeEach(()=>{

@@ -1,4 +1,5 @@
 const UserModel = require('../controllers/model/user.model');
+const LoginModel = require('./model/login.model');
 
 
 exports.createUser = async  (req,res,next) => {
@@ -66,6 +67,6 @@ try {
 
 // delete controller
 exports.deleteUser = async(req,res,next)=>{
-
+ 
 
 };

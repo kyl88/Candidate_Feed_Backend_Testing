@@ -7,6 +7,7 @@ const newLogin = require('../mock-data/new-login.json');
 LoginModel.create = jest.fn();
 LoginModel.find = jest.fn();
 LoginModel.findById = jest.fn();
+LoginModel.findByIdAndDelete=jest.fn();
 // basic function
 
 let req,res,next;
@@ -24,6 +25,12 @@ describe("LoginController.deleteLogin",()=>{
   it("should have a deleteLogin function",()=>{
       expect(typeof LoginController.deleteLogin).toBe("function");
        
+
+  });
+
+  it("should call findByIsAndDelete",async()=>{
+   
+   
 
   });
 
