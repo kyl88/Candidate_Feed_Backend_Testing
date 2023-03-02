@@ -127,8 +127,8 @@ describe ("LoginController.createLogin", ()=>{
   // test case is failing
 
   it("should return json body in response", async ()=> {
-       // LoginModel.create.mockReturnValue(newLogin);
-       // await LoginController.createLogin(res,req,next);
+        LoginModel.create.mockReturnValue(newLogin);
+        await LoginController.createLogin(res,req,next);
      
        // expect( res._getData()).toStrictEqual(newLogin);  
         
