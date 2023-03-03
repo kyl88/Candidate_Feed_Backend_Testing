@@ -16,17 +16,7 @@ const endpointUrlUser = "/user/";
       const response = await request (app)
         .post (endpointUrlUser)
         .send (newModel);
-       // expect (response.statusCode).toBe(201); // server side error:500
-      // expect (response.body.email).toBe(newModel.email);
-     //  expect (response.body.password).toBe(newModel.password);
-      // expect (response.body.signupmethod).toBe(newModel.signupmethod);
-      // expect (response.body.role).toBe(newModel.role);
-      // expect (response.body.independentgoal).toBe(newModel.independentgoal);
-      // expect (response.body.hiringgoals).toBe(newModel.hiringgoals);
-      // expect (response.body.hiringskills).toBe(newModel.hiringskills);
-     //  expect (response.body.startstate).toBe(newModel.startstate);
-     //  expect (response.body.durationstate).toBe(newModel.durationstate);
-      // expect (response.body.budget).toBe(newModel.budget);
+      
       
 
        // finish
