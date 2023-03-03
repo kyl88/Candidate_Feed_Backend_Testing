@@ -65,5 +65,7 @@ exports.updateLogin = async(req,res, next) => {
 
 // delete controller - Delete HTTP method
 exports.deleteLogin = async(req,res,next)=> {
+  LoginModel.findByIdAndDelete(req.params.loginId);
+
  
 };

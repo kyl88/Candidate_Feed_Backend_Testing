@@ -11,6 +11,7 @@ LoginModel.findByIdAndDelete=jest.fn();
 // basic function
 
 let req,res,next;
+const loginId = "";
 beforeEach(()=>{
   
   req = httpsMocks.createRequest();
@@ -29,8 +30,11 @@ describe("LoginController.deleteLogin",()=>{
   });
 
   it("should call findByIsAndDelete",async()=>{
-   
-   
+     req.params.loginId = loginId;
+     await LoginController.deleteLogin(req, res, next);
+     expect(LoginModel.findByIdAndDelete).toBeCalledWith(loginId);
+
+     
 
   });
 
