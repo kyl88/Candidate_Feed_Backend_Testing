@@ -3,7 +3,7 @@ const UserController = require('../controllers/user.controller');
 const UserModel = require('../controllers/model/user.model');
 const httpsMocks = require('node-mocks-http');
 const newModel = require('../../new-user.json');
-const LoginModel = require('../controllers/model/login.model');
+
 
 UserModel.create = jest.fn();
 UserModel.find = jest.fn();
