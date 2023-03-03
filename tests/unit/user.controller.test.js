@@ -8,6 +8,7 @@ const LoginModel = require('../controllers/model/login.model');
 UserModel.create = jest.fn();
 UserModel.find = jest.fn();
 UserModel.findById = jest.fn();
+UserModel.findByIdAndUpdate = jest.fn();
 UserModel.findByIdAndDelete=jest.fn();
 
 let req,res,next;
@@ -18,6 +19,16 @@ beforeEach(()=>{ // server listens
   req = httpsMocks.createRequest();
   res = httpsMocks.createResponse();
   next=jest.fn();
+
+});
+// testing put requests for user model
+describe("UserController.updateUser",()=>{
+   it("should have a updateUser function", ()=>{
+      expect(typeof UserController.updateUser).toBe("function");
+
+
+   });
+
 
 });
 
@@ -76,17 +87,6 @@ describe('Usercontroller.updateUser',()=>{
 
     });
 
-     
- 
-
-    // Write the 404 unit test 
-
-    it("should handle 404", async() => {
-    
-
-
-    });
-
   });
  
  });
@@ -114,7 +114,7 @@ describe('UserController.createUser',()=> {
    
      res.body = newModel;
      UserController.createUser(req,res,next);
-      //expect(UserModel.create).toBeCalledWith(newModel);
+
    });
 
     it ('user should be 201 status code',async()=>{
@@ -124,21 +124,6 @@ describe('UserController.createUser',()=> {
         expect(res._isEndCalled()).toBeTruthy();
     });
 
-    // Write the error handling - PUT 
-
-    it("should handle errors", async() => {
-    
-
-
-   });
-
-    // Write the 404 unit test 
-
-    it("should handle 404", async() => {
-    
-
-
-    });
-   
+ 
 
 });

@@ -64,6 +64,15 @@ try {
 
 };
 
+exports.updateUser = async(req,res,next)=>{
+ 
+    UserModel.findByIdAndUpdate(req.params.userId);
+  
+   
+  
+
+};
+
 
 // delete controller  - Delete HTTP method
 exports.deleteUser = async(req,res,next)=>{
