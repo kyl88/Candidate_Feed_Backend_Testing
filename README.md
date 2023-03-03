@@ -34,7 +34,7 @@ this is backend repository for the candidate feed projects
 
 ### unit test performed (user)
 
-- - delete user unit test
+- delete user unit test
 - should have a deleteUser function
 - call findByIdAndDelete function
 - Have a update function for user
