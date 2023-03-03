@@ -65,8 +65,12 @@ try {
 };
 
 
-// delete controller
+// delete controller  - Delete HTTP method
 exports.deleteUser = async(req,res,next)=>{
  
+    UserModel.findByIdAndDelete(req.params.userId);
+  
+   
+  
 
 };

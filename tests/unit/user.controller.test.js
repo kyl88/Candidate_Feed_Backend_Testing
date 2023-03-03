@@ -11,6 +11,8 @@ UserModel.findById = jest.fn();
 UserModel.findByIdAndDelete=jest.fn();
 
 let req,res,next;
+const userId =""; // token goes here
+
 beforeEach(()=>{
   
   req = httpsMocks.createRequest();
@@ -26,6 +28,11 @@ describe('UserController.deleteLogin',()=>{
       expect(typeof UserController.deleteUser).toBe("function");
 
 
+   });
+
+   it('should call findByIdAndDelete',async()=>{
+     req.params.userId = userId;
+  
    });
 
 
