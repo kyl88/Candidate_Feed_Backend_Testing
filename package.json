@@ -17,6 +17,7 @@
     "node-mocks-http": "^1.12.1"
   },
   "devDependencies": {
+    "eslint": "^8.35.0",
     "supertest": "^6.3.3"
   }
 }
