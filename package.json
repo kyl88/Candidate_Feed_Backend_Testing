@@ -4,7 +4,7 @@
   "description": "testing",
   "main": "index.js",
   "scripts": {
-    "integration-tests": "jest integration-tests",
+    "integration-tests": "reset-db.bat && jest integration-tests && reset-db.bat",
     "test": "jest --watchAll"
   },
   "keywords": [],
