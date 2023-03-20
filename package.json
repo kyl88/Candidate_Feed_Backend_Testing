@@ -4,6 +4,7 @@
   "description": "testing",
   "main": "index.js",
   "scripts": {
+    "integration-tests": "jest integration-tests",
     "test": "jest --watchAll"
   },
   "keywords": [],
